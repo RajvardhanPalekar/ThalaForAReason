@@ -74,6 +74,8 @@ function calculateReason() {
 
 // Function to show the reason
 function showReason(message) {
+    var body = document.getElementsByTagName("body");
+    body[0].style.backgroundImage = "url('resources/msd.jpg')";
     var tab = document.getElementById("content");
     tab.innerHTML = '<div class="animate__animated animate__zoomIn">' +
                     message +
@@ -81,10 +83,16 @@ function showReason(message) {
                     'Thala for a reason &#128293;' +
                     '</div>' +
                     '<button onclick="resetContent()">Reset</button>';
+                    
+    // Play the success sound
+    var sound = document.getElementById('success-sound');
+    sound.play();
 }
 
 
 function resetContent() {
+    var body = document.getElementsByTagName("body");
+    body[0].style.backgroundImage = "none";
     // Reset tab on button press
     document.getElementById("content").innerHTML = "<div id=\"content\">" +
                                                         "<h6>Type anything and we will try to find the reason</h6>" +

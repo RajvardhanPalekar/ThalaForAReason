@@ -107,3 +107,117 @@ h6 {
     }
 
 }
+
+.main_box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	width: 54px;
+    height: 54px;
+	background: rgb(95, 127, 255);
+    color: white;
+    border-radius: 32px;
+    position: fixed;
+    bottom: 18px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 8px; 
+    z-index: 9999;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.25s ease 0s;
+    transform: scale(1);
+}
+
+#share_button{
+	display: none;
+}
+
+span,a{
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+}
+
+span{
+	width: 2em;
+	height: 2em;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	background-color: #eee;
+	color: #333;
+	font-size: 2em;
+	z-index: 1;
+	cursor: pointer;
+	/* border-radius: 30%; */
+}
+
+.sm_list{
+	width: 2em;
+	height: 2em;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+.sm_list a{
+	width: 2em;
+	height: 2em;
+	border-radius: 50%;
+	text-decoration: none;
+	color: #fff;
+	transition: all .3s;
+	font-size: 1.5em;
+}
+
+#share_button:checked ~ .sm_list a:nth-child(1){
+	background-color: #3B5998;
+	transition-delay: 0.2s;
+	transform: translateX(-6em);
+}
+
+#share_button:checked ~ .sm_list a:nth-child(2){
+	background-color: #0077b5;
+	transition-delay: 0.2s;
+	transform: translateX(6em);
+}
+
+#share_button:checked ~ .sm_list a:nth-child(3){
+	background-color: #0f0e0f;
+	transition-delay: 0.3s;
+	transform: translateX(12em);
+}
+
+#share_button:checked ~ .sm_list a:nth-child(4){
+	background-color: #0dd148;
+	transition-delay: 0.3s;
+	transform: translateX(-12em);
+}
+
+
+/* Hovering Effects */
+#share_button:checked ~ .sm_list a:nth-child(1):hover{
+	background-color: #ffffff;
+	color: #3B5998;
+}
+
+#share_button:checked ~ .sm_list a:nth-child(2):hover{
+	color: #0077b5;
+	background-color: #fff;
+}
+
+#share_button:checked ~ .sm_list a:nth-child(3):hover{
+	color: #0f0e0f;
+	background-color: #fff;
+}
+
+#share_button:checked ~ .sm_list a:nth-child(4):hover{
+	color: #0dd148;
+	background-color: #fff;
+}
+
+span:visited{
+	background-color: #000f94;
+}

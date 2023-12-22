@@ -1,6 +1,6 @@
 body {
     font-family: 'roboto', sans-serif;
-    background-color: #ffdb3c;
+    background-color: #fbe44d;
     margin: 0;
     padding: 0;
     display: flex;
@@ -32,7 +32,7 @@ body {
     overflow-y: auto; /* Adds scroll to the container if content overflows */
 }
 #container input[type="text"] {
-    margin-bottom: 10px; /* Space between input boxes */
+    margin-bottom: 30px; /* Space between input boxes */
 }
 #container button {
     margin-top: 20px; /* Space above the submit button */
@@ -53,7 +53,7 @@ input[type="text"]:focus {
 button {
     padding: 10px 20px;
     border: none;
-    background-color: #28a745;
+    background-color: #5F7FFF;
     color: white;
     cursor: pointer;
     border-radius: 20px;
@@ -61,11 +61,11 @@ button {
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: #2f4084;
 }
 
 h1 {
-    color: #333;
+    color: #5F7FFF;
     text-align: center;
     margin-top: 20px;
     margin-bottom: 10px;
@@ -75,6 +75,14 @@ h6 {
     text-align: center;
     margin-top: 5px;
     margin-bottom: 5px;
+}
+
+#link-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 @media only screen and (max-width: 768px) {
@@ -112,7 +120,7 @@ h6 {
     display: flex;
     align-items: center;
     justify-content: center;
-	width: 54px;
+	width: 44px;
     height: 54px;
 	background: rgb(95, 127, 255);
     color: white;
@@ -145,8 +153,8 @@ span{
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%,-50%);
-	background-color: #eee;
-	color: #333;
+	background-color: #5F7FFF;
+	color: whitesmoke;
 	font-size: 2em;
 	z-index: 1;
 	cursor: pointer;

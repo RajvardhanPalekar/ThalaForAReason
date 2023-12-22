@@ -127,6 +127,7 @@ h6 {
     border-radius: 32px;
     position: fixed;
     bottom: 18px;
+    left: 18px;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 8px; 
     z-index: 9999;
     cursor: pointer;
@@ -183,25 +184,25 @@ span{
 #share_button:checked ~ .sm_list a:nth-child(1){
 	background-color: #3B5998;
 	transition-delay: 0.2s;
-	transform: translateX(-6em);
+	transform: translateY(-3em);
 }
 
 #share_button:checked ~ .sm_list a:nth-child(2){
 	background-color: #0077b5;
 	transition-delay: 0.2s;
-	transform: translateX(6em);
+	transform: translateY(-6em);
 }
 
 #share_button:checked ~ .sm_list a:nth-child(3){
 	background-color: #0f0e0f;
 	transition-delay: 0.3s;
-	transform: translateX(12em);
+	transform: translateY(-9em);
 }
 
 #share_button:checked ~ .sm_list a:nth-child(4){
 	background-color: #0dd148;
 	transition-delay: 0.3s;
-	transform: translateX(-12em);
+	transform: translateY(-12em);
 }
 
 

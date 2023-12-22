@@ -1,3 +1,6 @@
 # Thala For A Reason
 
-Stay tuned! This fanpage will be ready shortly. 
+
+Just a fanpage as tribute to Thala :yellow_heart: :fire:
+
+

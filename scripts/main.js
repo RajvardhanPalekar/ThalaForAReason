@@ -22,35 +22,61 @@ function calculateSum(num) {
     return sum;
 }
 
+function getNumberMessage(number) {
+    if (number < 0) {
+        return "Nothing negative about Thala!";
+    } else if (number === 1) {
+        return "Thala is #1";
+    } else if (number < 7) {
+        return `${number} + ${7 - number} = 7`;
+    } else if (number === 7 || number === 77 || number === 777) {
+        return "7 is Thala";
+    } else if (number < 16) {
+        return `${number} - ${number - 7} = 7`;
+    }
+    return undefined;
+}
+
 function checkNumber(input) {
-    if (input === 7 || input === 77 || input === 777) {
-        return "7 is Thala"
+    let message = getNumberMessage(input);
+    if (message) {
+        return message;
     }
     let num = input;
     let sum = calculateSum(num);
     message = input.toString().split('').join(' + ') + " = " + sum +"; "
-    if (sum === 7) {
-        return message;
-    } else if (calculateSum(sum) === 7) {
-        message += sum.toString().split('').join(' + ') + " = " + 7
-        return message;
+    let sumMessage =  getNumberMessage(sum);
+
+    if (sumMessage) {
+        return message + sumMessage;
+    } else {
+        let sum2 = calculateSum(sum);
+        message += "</br>" + sum.toString().split('').join(' + ') + " = " + sum2 +"; "
+        let sum2Message =  getNumberMessage(sum2);
+        return sum2Message? message + sum2Message: NOREASON;
     }
-    return NOREASON;
 }
 
 function checkString(input) {
     let message;
+    let strLength = input.length;
     if (GOOD_WORDS.includes(input.toLowerCase())) {
         message = "Thala is " + input +"!";
         return message;
     }
     if(input.match(/^[a-zA-Z0-9]+$/)) {
-        if(input.length === 7) {
-            message = input.split('').join(',') + " = " + 7
-            return message;
-        } 
+        message = `(${input.split('').join(',')}) = ${strLength}; `;
+        let stringMessage =  getNumberMessage(strLength);
+        if (stringMessage) {
+            return message + stringMessage;
+        } else {
+            let sum =  calculateSum(strLength);
+            message += "</br>" + strLength.toString().split('').join(' + ') + " = " + sum +"; "
+            let sumMessage =  getNumberMessage(sum);
+            return sumMessage? message + sumMessage: NOREASON;
+        }
     }
-    else if (input.length > 0){
+    else if (strLength > 0){
         return SPECIALREASON;
     } 
     return NOREASON;
@@ -58,10 +84,12 @@ function checkString(input) {
 
 function calculateReason() {
     let input = document.getElementById('inputText').value;
+    console.log(input);
+    console.log(typeof(input));
     let reason;
-    let numeric = parseInt(input);
+    let numeric = parseInt(input, 10);
+    console.log(numeric);
     if (numeric) {
-        console.log("numeric")
         reason = checkNumber(numeric);
         showReason(reason);
         return;
@@ -95,7 +123,7 @@ function resetContent() {
     body[0].style.backgroundImage = "none";
     // Reset tab on button press
     document.getElementById("content").innerHTML = "<div id=\"content\">" +
-                                                        "<h6>Type anything and we will try to find the reason</h6>" +
+                                                        "<h6>Try different numbers or words and we will try to find the reason</h6>" +
                                                         "<input type=\"text\" id=\"inputText\" placeholder=\"Type something..\">" +
                                                         "<button onclick=\"calculateReason()\">Submit</button>" +
                                                     "</div>"
